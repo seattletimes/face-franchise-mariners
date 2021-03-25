@@ -1,0 +1,22 @@
+{
+  "s3": {
+    "stage": {
+      "bucket": "projects-staging.seattletimes.com",
+      "path": "reciprocal-bordeaux"
+    },
+    "live": {
+      "bucket": "projects.seattletimes.com",
+      "path": "2020/features/oscars-poll/"
+    }
+  },
+  "title": "",
+  "description": "",
+  "author": "",
+  "url": "",
+  "post_id": 0,
+  "image": "assets/social.jpg",
+  "sheets": ["1aeTOKnktCL0PdhiDigOZLM08UfFc7NDO88pu3Aiw5Ds"],
+  "docs": [],
+  "embedded": true,
+  "production": true
+}
