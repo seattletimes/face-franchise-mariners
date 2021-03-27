@@ -15,59 +15,19 @@
       <%= t.include("partials/_gtmNoScript.html") %>
     <% } %>
     <responsive-child>
-      <!-- <%= t.include("partials/_nav.html") %> -->
-
-
       <!-- content goes here -->
-      <h3 class="graphic-hed">Who do you think will win?</h3>
-      <!-- <h4 class="graphic-chatter">Vote by clicking on a nominee, then compare your answers with predictions from
-        <a href="https://www.seattletimes.com/author/moira-macdonald/" target="_blank" rel="nofollow noopener noreferrer"> Seattle Times movie critic Moira Macdonald</a>
-        and the other movie buffs who weighed in.</h4> -->
-
-        <!-- <p class="publish-date">Published Feb. 3, 2020</p>
-
-
-        <div class="jump">
-          <a href="#bestPic"><div class="jumpBox">Best Picture</div></a>
-          <a href="#bestActor"><div class="jumpBox">Best Actor</div></a>
-          <a href="#bestActress"><div class="jumpBox">Best Actress</div></a>
-          <a href="#bestSActor"><div class="jumpBox">Best Supporting Actor</div></a>
-          <a href="#bestSActress"><div class="jumpBox">Best Supporting Actress</div></a>
-          <a href="#bestDirector"><div class="jumpBox">Best Director</div></a>
-        </div> -->
-
-      <div id="nom-holder">
-        <!-- <h2 class="pollHeads">Best Picture Nominees <span class="numVotes"></span></h2> -->
+      <h3 class="graphic-hed">The face of the franchise</h3>
+      
+      <div id="category-holder">
         <%= t.include("partials/_category.html") %>
-
       </div>
 
       <figcaption>
-        <span class="art-credit">Lauren Flannery / The Seattle Times</span>
-        <span class="data-source">Voting will be disabled after Feb. 10, 2020</span>
+        <span class="art-credit">Emily M. Eng / The Seattle Times</span>
+        <span class="data-source">Voting will be disabled after April 8, 2021</span>
       </figcaption>
 
-      <!-- <div class="module">
-        <section class="thin-div">
-	         <div class="center">Credits</div>
-        </section>
-        <section class="project-credits">
-
-        		<p class="project-credit"><strong>Reporting: </strong><a href="https://www.seattletimes.com/author/moira-macdonald/">Moira Macdonald</a></p>
-
-        		<p class="project-credit"><strong>Graphics and development: </strong>Lauren Flannery</p>
-
-        		<p class="project-credit"><strong>Editing: </strong>Stefanie Loh and Janet Tu</p>
-
-            <p class="project-credit"><strong>Photography: </strong>Courtesy of film studios</p>
-        </section>
-      </div> -->
-
     </responsive-child>
-    <!-- <%= t.include("partials/_marketing.html", {type: "subscribe", placement: "sidebar"}) %>
-    <%= t.include("partials/_navBottom.html") %> -->
-
-
 
     <script src="app.js" async></script>
     <% if (json.project.production) { %>

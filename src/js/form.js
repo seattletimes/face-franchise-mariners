@@ -7,12 +7,12 @@ var cookie = require("./cookies");
 var placeUser = require("./graph");
 
 // var panel = document.querySelector(".form-panel");
-var container = document.querySelector(".nom-Holder");
+var container = document.querySelector(".category-Holder");
 //
 // var message = panel.querySelector(".message");
 var form = panel.querySelector(".entry");
 
-var storageKey = `oscar-noms-2020`;
+var storageKey = `face-franchise`;
 
 //do not show form if it has been submitted before
 if (cookie.read(storageKey)) {
