@@ -84,7 +84,12 @@
   font-family: sans-serif;
   padding: 0px 10px 10px 10px;
   position: relative;
-  height: 90px;
+  height: 40px;
+  
+  @media @mobile {
+    height: 40px;
+    
+  }
 
   // For the Bar Charts
   // background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0%, #fdce77));
@@ -99,7 +104,7 @@
 
   .cardInfo {
     position: absolute;
-    top: 25%;
+    top: 10%;
 
     @media @mobileTablet {
       top: 22%;
@@ -110,8 +115,8 @@
     font-weight: bold;
     font-family: 'Bebas Neue', cursive;
     letter-spacing: 1px;
-    font-size: 1.2em;
-    // font-family: 'Bowlby One SC', cursive;
+    font-size: 1.3em;
+    
     @media @mobileTablet {
       font-size: 18px;
       line-height: 1.2em;
@@ -215,4 +220,11 @@
   font-size: 16px;
   font-family: sans-serif;
   font-style: italic;
+}
+
+.note {
+  text-align: center;
+  font-style: italic;
+  font-size: 18px;
+  padding-bottom: 20px;
 }
