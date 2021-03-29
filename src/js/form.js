@@ -1,5 +1,5 @@
 //TODO: update the endpoint
-var endpoint = "https://script.google.com/macros/s/AKfycbxFy5FcTr36Hf2Lug_yAdC_NZYeVSbxnmlqUepVRVAJcUYuRKGj/exec";
+var endpoint = "https://script.google.com/macros/s/AKfycbzsbIC6oCOwBGlZpHyeiwzQtcNKmnnzvVlgRZKFOWsfCBDdIWE/exec";
 
 var ajax = require("./jsonp");
 var formUtil = require("./form-utils");

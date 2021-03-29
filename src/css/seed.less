@@ -3,8 +3,14 @@
 @img-width-margin: (@img-width + 5);
 @mobileTablet: ~"(max-width: 959px)";
 
-.art-credit.disclaimer { text-align: center; display: block; float: none; }
-.marketing.marketing--sidebar { margin: auto; }
+.art-credit.disclaimer { 
+  text-align: center; 
+  display: block; 
+  float: none; 
+}
+.marketing.marketing--sidebar { 
+  margin: auto; 
+}
 
 .jump {
   max-width: 960px;
@@ -64,10 +70,8 @@
       vertical-align: top;
       // padding: 5px;
       border: 1px solid #aaa;
-      background-color: white;
+      // background-color: white;
       transition: all .2s ease-in-out;
-
-
 
       @media @mobileTablet {
         width: 49%;
@@ -75,8 +79,44 @@
     }
   }
 
+  .talent {
+    background-color: #cedff8;
+  }
+
+  .personality {
+    background-color: #f8d5d3;
+  }
+
+  .production {
+    background-color: #b1d9f8;
+  }
+
+  .longevity {
+    background-color: #f0d3d8;
+  }
+
+  .postseason {
+    background-color: #76b9ce;
+  }
+
+  .confidence {
+    background-color: #f5e2c9;
+  }
+
+  .highlight {
+    background-color: #95b4e5;
+  }
+
+  .factor {
+    background-color: #5aacc5;
+  }
+
+  .clutch {
+    background-color: #f8e9c0;
+  }
+
   .completeEntry.voted {
-    border: 3px solid @df-blue;
+    border: 3px solid black;
   }
 }
 
@@ -88,7 +128,6 @@
   
   @media @mobile {
     height: 40px;
-    
   }
 
   // For the Bar Charts
@@ -100,7 +139,6 @@
   // transition: background-size 0.7s;
   // -webkit-transition-delay: 0.25s;
   // transition-delay: 0.25s;
-
 
   .cardInfo {
     position: absolute;
@@ -174,10 +212,10 @@
     .youVote {
       text-transform: uppercase;
       font-size: 16px;
-      font-weight: bold;
       color: white;
       font-family: 'Bebas Neue', cursive;
-      background-color: @df-blue;
+      background-color: black;
+      letter-spacing: 2px;
 
       @media @mobileTablet {
         font-size: 14px;
@@ -200,14 +238,12 @@
       .percentSign {
         font-size: 0.5em;
         vertical-align: top;
-
       }
 
       @media @mobileTablet {
         font-size: 3.5em;
       }
      }
-
 
     &.voted {
       color: @df-blue;
@@ -227,4 +263,9 @@
   font-style: italic;
   font-size: 18px;
   padding-bottom: 20px;
+
+  @media @mobile {
+    font-size: 16px;
+    padding-bottom: 8px;
+  }
 }

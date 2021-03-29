@@ -6,7 +6,7 @@
     },
     "live": {
       "bucket": "projects.seattletimes.com",
-      "path": "2021/sports/xxxx/"
+      "path": "2021/sports/face-franchise-mariners-vote"
     }
   },
   "title": "",
@@ -18,5 +18,5 @@
   "sheets": ["1DKNIvjAhPqR8WAKb47N9jq-wJ7v1I7jRT6fx5yNZJmY"],
   "docs": [],
   "embedded": true,
-  "production": false
+  "production": true
 }
