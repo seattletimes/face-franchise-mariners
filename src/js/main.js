@@ -1,6 +1,6 @@
 require("component-responsive-frame/child");
 var $ = require('jquery');
-var scriptURL = 'https://script.google.com/macros/s/AKfycbzsbIC6oCOwBGlZpHyeiwzQtcNKmnnzvVlgRZKFOWsfCBDdIWE/exec';
+var scriptURL = 'https://script.google.com/macros/s/AKfycbyMhiCaH7aKpm52W98405WsZFfWvGFFVuFEfWjRLpWc7rB3F1Jw67Atgi4kFMbshH_-dQ/exec';
 var votes = require("../../data/predictions.sheet.json");
 
 var width = $(".entry").width();
@@ -17,21 +17,21 @@ function getCookie(name) {
 }
 
 function submitHandler(e, entry){
-    var title = $( entry ).attr( "data-title" );
+    // var title = $( entry ).attr( "data-title" );
     var category = $( entry ).attr( "data-category" );
     var player = $( entry ).attr( "data-player" );
-    // var thisMovie = $( entry ).attr( "data-id" );
-    savedPicks.push(category);
+    var thisMovie = $( entry ).attr( "data-id" );
+    savedPicks.push((thisMovie + "|" + category));
 
 
     var formData = new FormData();
 
 
-    // if ( obj.hasOwnProperty(thisMovie) ) {
-    //   obj[thisMovie] = (obj[thisMovie] + 1);
-    // } else {
-    //   obj[thisMovie] = 1;
-    // }
+    if ( obj.hasOwnProperty(thisMovie) ) {
+      obj[thisMovie] = (obj[thisMovie] + 1);
+    } else {
+      obj[thisMovie] = 1;
+    }
 
     if ( catObj.hasOwnProperty( category ) ) {
       catObj[category] = (catObj[category] + 1);
@@ -40,9 +40,11 @@ function submitHandler(e, entry){
     }
 
 
-    formData.append("vote", title);
+    // formData.append("vote", title);
     formData.append("category", category);
     formData.append("player", player);
+
+    console.log(category);
 
     showVoteTallies(category);
 
@@ -69,13 +71,13 @@ $( ".completeEntry" ).click(function(a) {
 ///////////////////////
 
 $.each(votes, function(index, element) {
-    var thisMovie = element.vote + element.category + element.player;
+    var thisMovie = element.category + element.player;
 
-    // if ( obj.hasOwnProperty(thisMovie) ) {
-    //   obj[thisMovie] = (obj[thisMovie] + 1);
-    // } else {
-    //   obj[thisMovie] = 1;
-    // }
+    if ( obj.hasOwnProperty(thisMovie) ) {
+      obj[thisMovie] = (obj[thisMovie] + 1);
+    } else {
+      obj[thisMovie] = 1;
+    }
 
     if ( catObj.hasOwnProperty( element.category ) ) {
       catObj[element.category] = (catObj[element.category] + 1);
@@ -98,13 +100,16 @@ function highlightChosenFadeOthers( chosenEntry ){
 
 function showVoteTallies(selectedCategory) {
   var catTotal = catObj[selectedCategory];
+  console.log(catObj);
+  console.log(obj);
+  catTotal = (catTotal === undefined) ? 0 : catTotal;
   $('#category-holder').find(`*[data-head-category="${ selectedCategory }"]`).prev('.pollHeads').find('.numVotes').append(`${catTotal} votes`);
 
   for(var propertyName in obj) {
     if( propertyName.includes(selectedCategory) ){
       var value = obj[propertyName];
 
-      console.log( catTotal );
+
       var percentage = (value / catTotal) * 100;
       var perVotes = Math.round(percentage);
 
@@ -121,8 +126,13 @@ if (getCookie("votesPick")) {
   savedPicks.push(pickedArray);
   var pickedSplitArray = pickedArray.split(",");
 
+
+
   $.each(pickedSplitArray, function(index, element) {
     var movAndCat = element.split("|");
+
+    console.log(movAndCat);
+
     showVoteTallies(movAndCat[1]);
     highlightChosenFadeOthers( $(`*[data-id="${ movAndCat[0] }"]`)  );
   });
